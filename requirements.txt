@@ -1,0 +1,5 @@
+disnake
+asyncio
+tinydb
+telethon
+pillow
