@@ -16,6 +16,7 @@ discord_bot = commands.Bot(
 # API values, use .env in production or something more appropriate 
 app_id = 0
 app_hash = ''
+discord_token = ''
 client = TelegramClient("session", app_id, app_hash) 
 
 def hex_to_rgb(hex_string):
@@ -177,8 +178,8 @@ async def update(
 with client:
     loop = asyncio.get_event_loop()
     loop.create_task(
-        discord_bot.run("OTk4NTY5NDcxODM5MDYwMDM4.GE8haG.dsLaI1prSxo4b2IUcDX0G-xb65JcXyBBRQi1U4")
+        discord_bot.run(discord_token)
     )
-    loop.create_task(client.run_until_disconnected())
+    loop.create_task(client.run_until_disconnected(d))
     print("Running service")
     loop.run_forever()
